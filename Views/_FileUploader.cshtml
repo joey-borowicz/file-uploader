@@ -1,0 +1,24 @@
+﻿@model Dakota.CJIIN.Web.EBriefingV2.Models.EBriefItemModel
+@Styles.Render("~/Content/uploader/file-uploader.css")
+@Scripts.Render("~/Scripts/uploader/file-uploader.js")
+
+<div class="file-upload">
+    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+
+    <div class="image-upload-wrap">
+        @*<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />*@
+        @Html.TextBoxFor(m => m.NewFiles, "", new { @type = "file", @multiple = "multiple", @class = "file-upload-input", @onchange = "readURL(this);" })
+        <div class="drag-text">
+            <h3>Drag and drop a file<br />or select add Image</h3>
+        </div>
+    </div>
+    <div class="file-upload-content">
+        <div class="file-upload-image-section">
+
+        </div>
+        @*<img class="file-upload-image" src="#" alt="your image" />*@
+        <div class="image-title-wrap">
+            <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Images</span></button>
+        </div>
+    </div>
+</div>
